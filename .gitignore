@@ -1,1 +1,3 @@
-/assets/vendor
+/views/assets/vendor
+node_modules
+.env
