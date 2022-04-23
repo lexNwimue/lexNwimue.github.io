@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/lexNwimue/portfolio#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "multiparty": "^4.2.3",

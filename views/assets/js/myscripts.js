@@ -9,12 +9,14 @@ form.addEventListener('submit', e => {
         message: document.getElementById('message').value,
     }
 
+    console.log(mail);
+
     fetch("/contact", {
         headers: {
             'Content-Type': 'application/json'
         },
         method: 'POST',
-        body: mail
+        body: JSON.stringify(mail)
     })
         .then(response => response.json())
         .then(data => console.log(data))
