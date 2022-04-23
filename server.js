@@ -24,9 +24,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/contact', async (req, res) => {
-    const { name, email, subject, message } = req.body;
-    console.log(name, email, subject, message);
-    console.log('My Details', process.env.EMAIL, process.env.PASSWORD);
+    let { name, email, subject, message } = req.body;
+    message += + '\n' + email + '\n' + name;
 
     if(process.env.EMAIL && process.env.PASSWORD){
         const transporter = nodemailer.createTransport({
@@ -36,13 +35,14 @@ app.post('/contact', async (req, res) => {
                 pass: process.env.PASSWORD,
             }
         });
-        await transporter.verify();
+        transporter.verify()
+            .then()
+            .catch(err => console.log('There was some error ', err))
 
         const mailOptions = {
-            from: req.body.email,
             to: process.env.EMAIL,
-            subject: req.body.subject,
-            text: req.body.message
+            subject: subject,
+            text: message
         };
     
         transporter.sendMail(mailOptions)
