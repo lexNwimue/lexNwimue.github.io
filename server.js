@@ -1,16 +1,16 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
-import multiparty from 'multiparty';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // __dirname as a global variable is not defined in ES6 module, hence the 
 // four lines of code below is to fix that issue
 import path from 'path';
 import { fileURLToPath } from 'url';
-import exp from 'constants';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-//import ('dotenv').config();
+
 
 
 const app = express();
@@ -24,33 +24,32 @@ app.get('/', (req, res) => {
 })
 
 app.post('/contact', async (req, res) => {
-
     const { name, email, subject, message } = req.body;
     console.log(name, email, subject, message);
+    console.log('My Details', process.env.EMAIL, process.env.PASSWORD);
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD,
-        }
-    });
+    if(process.env.EMAIL && process.env.PASSWORD){
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: process.env.EMAIL,
+                pass: process.env.PASSWORD,
+            }
+        });
+        await transporter.verify();
 
-    await transporter.verify();
-
-    const mailOptions = {
-        from: req.body.email,
-        to: process.env.EMAIL,
-        subject: req.body.subject,
-        text: req.body.message
-    };
-
-    transporter.sendMail(mailOptions)
-        .then(info => {
-            console.log(info);
-            res.json({info});
-        })
-        .catch(err => console.err(err))
+        const mailOptions = {
+            from: req.body.email,
+            to: process.env.EMAIL,
+            subject: req.body.subject,
+            text: req.body.message
+        };
     
-    res.json({data: 'Received'});
+        transporter.sendMail(mailOptions)
+            .then(info => {
+                console.log(info);
+                res.json({info});
+            })
+            .catch(err => console.err(err))
+    }
 })
