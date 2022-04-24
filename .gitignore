@@ -1,2 +1,4 @@
 node_modules
 .env
+server.js
+/views/assets/js/myscripts.js
