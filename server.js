@@ -24,8 +24,13 @@ app.get('/', (req, res) => {
 })
 
 app.post('/contact', async (req, res) => {
-    let { name, email, subject, message } = req.body;
-    message += + '\n' + email + '\n' + name;
+
+    const { name, email, subject, } = req.body;
+
+    // There seems to be an issue with nodemailer making the 'from' (sender's) address
+    // my address, making me unable to identify the actual sender. 
+    // Hence, I am using the message body to get the sender's name and email as shown in the next line
+    const message = `From ${name} - ${email}: \n ${req.body.message}`;
 
     if(process.env.EMAIL && process.env.PASSWORD){
         const transporter = nodemailer.createTransport({
@@ -35,9 +40,6 @@ app.post('/contact', async (req, res) => {
                 pass: process.env.PASSWORD,
             }
         });
-        transporter.verify()
-            .then()
-            .catch(err => console.log('There was some error ', err))
 
         const mailOptions = {
             to: process.env.EMAIL,
