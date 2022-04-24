@@ -2,14 +2,12 @@ import express from 'express';
 import nodemailer from 'nodemailer';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import fs from 'fs';
 dotenv.config();
 
 // __dirname as a global variable is not defined in ES6 module, hence the 
 // four lines of code below is to fix that issue
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { fstat } from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
