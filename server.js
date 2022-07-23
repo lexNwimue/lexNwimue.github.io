@@ -14,7 +14,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.listen(5500, () => console.log("Listening for requests on port 5500..."));
+app.listen(process.env.PORT || 8080, () =>
+  console.log("Listening for requests on port 5500...")
+);
 app.use(express.static("views"));
 app.set("view engine", "ejs");
 
