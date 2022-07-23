@@ -33,18 +33,14 @@ form.addEventListener("submit", (e) => {
       loadingDiv.style.display = "none";
       successDiv.style.display = "block";
 
-      setTimeout(() => {
-        successDiv.style.display = "none";
+      if (data.err) {
+        errorDiv.style.display = "block";
+        loadingDiv.style.display = "none";
         submitBtn.disabled = false;
-        name.value = email.value = subject.value = message.value = "";
-      }, 5000);
+        setTimeout(() => {
+          errorDiv.style.display = "none";
+        }, 5000);
+      }
     })
-    .catch((err) => {
-      errorDiv.style.display = "block";
-      loadingDiv.style.display = "none";
-      submitBtn.disabled = false;
-      setTimeout(() => {
-        errorDiv.style.display = "none";
-      }, 5000);
-    });
+    .catch();
 });

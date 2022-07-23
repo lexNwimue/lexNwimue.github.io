@@ -26,34 +26,34 @@ app.get("/", (req, res) => {
 
 app.post("/contact", async (req, res) => {
   const { name, email, subject } = req.body;
-  console.log(name, email, subject);
+  res.json({ err: "Some error occured" });
 
   // There seems to be an issue with nodemailer making the 'from' (sender's) address
   // my address, making me unable to identify the actual sender.
   // Hence, I am using the message body to get the sender's name and email as shown in the next line
-  const message = `From ${name} - ${email}: \n ${req.body.message}`;
+  //   const message = `From ${name} - ${email}: \n ${req.body.message}`;
 
-  if (process.env.EMAIL && process.env.PASSWORD) {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
-      },
-    });
+  //   if (process.env.EMAIL && process.env.PASSWORD) {
+  //     const transporter = nodemailer.createTransport({
+  //       service: "gmail",
+  //       auth: {
+  //         user: process.env.EMAIL,
+  //         pass: process.env.PASSWORD,
+  //       },
+  //     });
 
-    const mailOptions = {
-      to: process.env.EMAIL,
-      subject: subject,
-      text: message,
-    };
+  //     const mailOptions = {
+  //       to: process.env.EMAIL,
+  //       subject: subject,
+  //       text: message,
+  //     };
 
-    transporter
-      .sendMail(mailOptions)
-      .then((info) => {
-        console.log(info);
-        res.json({ info });
-      })
-      .catch((err) => console.log(err));
-  }
+  //     transporter
+  //       .sendMail(mailOptions)
+  //       .then((info) => {
+  //         console.log(info);
+  //         res.json({ info });
+  //       })
+  //       .catch((err) => console.log(err));
+  //   }
 });
