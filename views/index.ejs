@@ -12,8 +12,8 @@
     />
 
     <!-- Favicons -->
-    <link href="./views/assets/img/favicon.png" rel="icon" />
-    <link href="./views/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="./assets/img/favicon.png" rel="icon" />
+    <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link
@@ -22,25 +22,25 @@
     />
 
     <!-- Vendor CSS Files -->
-    <link href="./views/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="./assets/vendor/aos/aos.css" rel="stylesheet" />
     <link
-      href="./views/assets/vendor/bootstrap/css/bootstrap.min.css"
+      href="./assets/vendor/bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
-      href="./views/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      href="./assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="./views/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
     <link
-      href="./views/assets/vendor/glightbox/css/glightbox.min.css"
+      href="./assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
     />
-    <link href="./views/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./views/assets/font-awesome/css/font-awesome.min.css">
+    <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
 
     <!-- Template Main CSS File -->
-    <link href="./views/assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -123,7 +123,7 @@
 
           <div class="row">
             <div class="col-lg-4">
-              <img src="./views/assets/img/profile-img.jpg" class="img-fluid" style="border-radius: 30%; height: 300px;" alt="" />
+              <img src="./assets/img/profile-img.jpg" class="img-fluid" style="border-radius: 30%; height: 300px;" alt="" />
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content">
               <h3>Web Developer &amp; Software Engineer</h3>
@@ -443,7 +443,7 @@
               <div class="portfolio-wrap">
                 <img
                   style="height: 280px;"
-                  src="./views/assets/img/eLib.PNG"
+                  src="./assets/img/eLib.PNG"
                   class="img-fluid"
                   alt=""
                 />
@@ -452,7 +452,7 @@
                   <p>Web</p>
                   <div class="portfolio-links">
                     <a
-                      href="./views/assets/img/eLib1.png"
+                      href="./assets/img/eLib1.png"
                       data-gallery="portfolioGallery"
                       class="portfolio-lightbox"
                       title="The eLib is an online library where users can signup, borrow, and return books
@@ -476,7 +476,7 @@
               <div class="portfolio-wrap">
                 <img
                   style="height: 250px;"
-                  src="./views/assets/img/timer-app.PNG"
+                  src="./assets/img/timer-app.PNG"
                   class="img-fluid"
                   alt=""
                 />
@@ -485,7 +485,7 @@
                   <p>Web</p>
                   <div class="portfolio-links">
                     <a
-                      href="./views/assets/img/timer-app.PNG"
+                      href="./assets/img/timer-app.PNG"
                       data-gallery="portfolioGallery"
                       class="portfolio-lightbox"
                       title="This small frontend-only app was written as a play on JavaScript DOM
@@ -508,7 +508,7 @@
               <div class="portfolio-wrap">
                 <img
                   style="height: 200px;"
-                  src="./views/assets/img/movie-app.PNG"
+                  src="./assets/img/movie-app.PNG"
                   class="img-fluid"
                   alt=""
                 />
@@ -517,7 +517,7 @@
                   <p>Web</p>
                   <div class="portfolio-links">
                     <a
-                      href="./views/assets/img/movie-app1.PNG"
+                      href="./assets/img/movie-app1.PNG"
                       data-gallery="portfolioGallery"
                       class="portfolio-lightbox"
                       title="With this app I practiced querying data from APIs using the IMDB API along 
@@ -862,7 +862,7 @@
               <div class="swiper-slide">
                 <div class="testimonial-item">
                   <img
-                    src="./views/assets/img/favicon.png"
+                    src="./assets/img/favicon.png"
                     class="testimonial-img"
                     alt=""
                   />
@@ -979,13 +979,13 @@
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
-                  <p>3B Ukwator Street, Mile II, Diobu, Port Harcourt</p>
+                  <p>Port Harcourt, Rivers State, Nigeria</p>
                 </div>
 
                 <div class="email">
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
-                  <p>nwimueprogress@gmail.com</p>
+                  <p><a href="mailto: nwimueprogress@gmail.com" style="color: #777777;">nwimueprogress@gmail.com</a></p>
                 </div>
 
                 <div class="phone">
@@ -998,7 +998,7 @@
 
             <div class="col-lg-8 mt-5 mt-lg-0">
               <form
-                id = 'contact-form'
+                id = 'contactForm'
                 method="POST"
                 role="form"
                 class="php-email-form"
@@ -1007,9 +1007,8 @@
                   <div class="col-md-6 form-group">
                     <input
                       type="text"
-                      name="name"
                       class="form-control"
-                      id="name"
+                      id="contact-name"
                       placeholder="Your Name"
                       required
                     />
@@ -1018,8 +1017,7 @@
                     <input
                       type="email"
                       class="form-control"
-                      name="email"
-                      id="email"
+                      id="contact-email"
                       placeholder="Your Email"
                       required
                     />
@@ -1029,31 +1027,29 @@
                   <input
                     type="text"
                     class="form-control"
-                    name="subject"
-                    id="subject"
+                    id="contact-subject"
                     placeholder="Subject"
                     required
                   />
                 </div>
                 <div class="form-group mt-3">
                   <textarea
-                    id = 'message'
+                    id = 'contact-message'
                     class="form-control"
-                    name="message"
                     rows="5"
                     placeholder="Message"
                     required
                   ></textarea>
                 </div>
                 <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
+                  <div id="loading" class="alert alert-info" style="display: none;"> Loading </div>
+                  <div id="error-message" class="alert alert-danger" style="display: none ;">
+                    There was some error sending your message. 
+                    Please use the other contact channels (WhatsApp, LinkedIn, Facebook etc.) if possible or <a href="mailto: nwimueprogress@gmail.com">Mail</a></div>
+                  <div id="sent-message" class="alert alert-success" style="display: none;">Message sent successfully...</div>
                 </div>
                 <div class="text-center">
-                  <button type="submit">Send Message</button>
+                  <button id="submit-btn" type="submit">Send Message</button>
                 </div>
               </form>
             </div>
@@ -1095,17 +1091,17 @@
     ></a>
 
     <!-- Vendor JS Files -->
-    <script src="./views/assets/vendor/purecounter/purecounter.js"></script>
-    <script src="./views/assets/vendor/aos/aos.js"></script>
-    <script src="./views/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./views/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="./views/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="./views/assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="./views/assets/vendor/typed.js/typed.min.js"></script>
-    <script src="./views/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="./assets/vendor/purecounter/purecounter.js"></script>
+    <script src="./assets/vendor/aos/aos.js"></script>
+    <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="./assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/vendor/typed.js/typed.min.js"></script>
+    <script src="./assets/vendor/waypoints/noframework.waypoints.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="./views/assets/js/main.js"></script>
-    <!-- <script src="assets/js/myscripts.js"></script> -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/myscripts.js"></script>
   </body>
 </html>
