@@ -153,10 +153,10 @@
           <div class="row">
             <div class="col-lg-4">
               <img
-                src="./views/assets/img/Profile.jpg"
+                src="./views/assets/img/portrait2.jpg"
                 class="img-fluid"
-                style="border-radius: 30%; height: 300px"
-                alt=""
+                style="border-radius: 10%; height: 400px; object-fit: contain"
+                alt="Lex Nwimue Progress portfolio Profile picture"
               />
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content">
@@ -433,11 +433,12 @@
       <section id="portfolio" class="portfolio section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Projects</h2>
+            <h2>What I've been cooking...</h2>
             <p>
-              I give 110% for each of the projects listed here. Its so true I'd
-              say it twice. I give 110% for each project I take part in. My role
-              in each was entirely on the backend
+              I know my way around the kitchen, because why not? I need more on
+              this trophy collection, so maybe the next item here might include
+              something of yours... You can already perceive the aroma! Or like
+              we say around here: <em>"You don dey hear the odour!"</em>
             </p>
           </div>
 
@@ -656,7 +657,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit">Send Message</button>
+                  <button type="submit" id="submit-btn">Send Message</button>
                 </div>
               </form>
             </div>
@@ -670,7 +671,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
       <div class="container">
-        <h3>Nwimue Progress lex.</h3>
+        <h3>Lex Nwimue P.</h3>
         <div class="social-links">
           <a
             href="https://www.twitter.com/lexNwimue"
@@ -725,6 +726,15 @@
 
     <!-- Template Main JS File -->
     <script src="./views/assets/js/main.js"></script>
-    <!-- <script src="assets/js/myscripts.js"></script> -->
+    <script src="./views/assets/js/myscripts.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("6AwXc4SqinRm6E1Dy");
+      })();
+    </script>
   </body>
 </html>
